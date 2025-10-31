@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schéma XSD pour la version pro : spécifie les types de données et
+     impose la présence de certains éléments. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="images">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="image" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="patientId" type="xs:string"/>
+              <xs:element name="viewPosition" type="xs:string"/>
+              <xs:element name="labels" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="label" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="localizations" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="localization" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

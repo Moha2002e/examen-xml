@@ -1,0 +1,9 @@
+<!ELEMENT images (image*)>
+<!ELEMENT image (patientId, viewPosition, labels?, localizations?)>
+<!ATTLIST image id CDATA #REQUIRED>
+<!ELEMENT patientId (#PCDATA)>
+<!ELEMENT viewPosition (#PCDATA)>
+<!ELEMENT labels (label*)>
+<!ELEMENT label (#PCDATA)>
+<!ELEMENT localizations (localization*)>
+<!ELEMENT localization (#PCDATA)>
